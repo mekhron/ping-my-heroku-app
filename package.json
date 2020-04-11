@@ -1,0 +1,23 @@
+{
+  "name": "ping-my-heroku-app",
+  "version": "1.0.0",
+  "description": "Ping heroku app to keep it live",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mekhron/ping-my-heroku-app.git"
+  },
+  "keywords": [
+    "heroku",
+    "ping"
+  ],
+  "author": "Mekhron Khusainov <uptimizator@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mekhron/ping-my-heroku-app/issues"
+  },
+  "homepage": "https://pingmy.herokuapp.com"
+}
