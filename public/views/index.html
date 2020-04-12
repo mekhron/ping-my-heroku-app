@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+
+    <title>Ping My Heroku App</title>
+</head>
+<body>
+    <div class="container">
+        <!--navbar start-->
+        <nav class="teal lighten-2">
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo center">Ping My Heroku App</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="/about">about</a></li>
+                    <li><a href="https://github.com/mekhron/ping-my-heroku-app">source code</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--end navbar-->
+
+        <!--description start-->
+        <div class="row">
+            <form class="col s12" id="pingMyApp">
+                <div class="row">
+                        <div class="input-field col s4">
+                            <i class="material-icons prefix">add_box</i>
+                            <input id="url" type="text" class="validate">
+                            <label for="url">App name</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">type in your app name</span>
+                        </div>
+                        <div class="input-field col">
+                            <input id="url" type="text" class="validate" disabled style="border-bottom: 0px;">
+                            <label for="url">.herokuapp.com</label>
+                        </div>
+                        <div class="input-field col" style="padding-top:10px;">
+                            <button class="btn waves-effect waves-light" type="submit" name="action" disabled>Keep my app alive
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                </div>
+            </form>
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        <a href=""  class="tooltipped" data-tooltip="Stop pinging this app"><i class="material-icons" style="color:#2bbbad;">play_arrow</i></a>
+                        <a href=""><span style="color:#2bbbad;">my-first-app.herokuapp.com</span></a>
+                        <span class="badge">added 2 hours ago</span>
+                        <a href="" class="tooltipped" data-tooltip="Delete"><i class="material-icons" style="color:#ee6e73;">delete</i></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">
+                        <a href="" class="tooltipped" data-tooltip="Try again"><i class="material-icons" style="color:#ee6e73;">error</i></a>
+                        <a href=""><span style="color:#ee6e73;">my-second-app.herokuapp.com — inactive</span></a>
+                        <span class="badge">added 16 hours ago</span>
+                        <a href="" class="tooltipped" data-tooltip="Delete"><i class="material-icons" style="color:#ee6e73;">delete</i></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">
+                        <a href="" class="tooltipped" data-tooltip="Keep alive this app"><i class="material-icons">stop</i></a>
+                        <a href=""><span style="color: black;">my-third-app.herokuapp.com</span></a>
+                        <span class="badge">added 48 hours ago</span>
+                        <a href="" class="tooltipped" data-tooltip="Delete"><i class="material-icons" style="color:#ee6e73;">delete</i></a>
+                    </div>
+                </li>
+              </ul>
+            <div class="collapsible">
+                <div class="collapsible-header">This app is for education purposes, so it has some restrictions:</div>
+                <div class="collapsible-body">
+                    <ul class="collection">
+                        <li class="collection-item">Your app has to be UP and running, before you add it to pinger</li>
+                        <li class="collection-item">It will keep pinging your app only for 3 days. If you need extend it, you have to come back and extend it manually;</li>
+                        <li class="collection-item">It is only for heroku apps, links to other apps will be ignored;</li>
+                        <li class="collection-item">You can add only 3 apps from your IP.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>   
+        <!--end description-->
+
+        <!--footer start-->
+        <footer class="page-footer teal lighten-2">
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2020 Mekhron Khusainov
+                    <a class="grey-text text-lighten-4 right" href="https://t.me/uptimizator">contact author</a>
+                </div>
+            </div>
+        </footer>
+        <!--end footer-->
+    </div>
+        
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.tooltipped');
+            var instances = M.Tooltip.init(elems, {});
+        });
+    </script>
+</body>
+</html>
