@@ -2,6 +2,10 @@
 
 Ping heroku app to keep it live
 
+
+![Application screensot](/public/images/pingMy.herokuapp.png)
+
+
 ## Getting Started
 
 Application where you can add link to your heroku app and it automatically will be pinged each 30 mins.

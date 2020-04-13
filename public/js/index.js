@@ -78,7 +78,7 @@ function fetchHerokuApps() {
 
         let output = `<li>
                             <div class="collapsible-header">
-                                <a href=""  class="tooltipped" data-tooltip="Stop pinging this app"><i class="material-icons" style="color:#2bbbad;">${currentTime - addedTime <= 1200 ? 'play_arrow' : 'stop'}</i></a>
+                                <a href=""  class="tooltipped" data-tooltip="Stop pinging this app"><i class="material-icons" style="color:#2bbbad;">${currentTime - addedTime <= 3000 ? 'play_arrow' : 'stop'}</i></a>
                                 <a href="https://${name}.herokuapp.com" target="_blank"><span style="color:#2bbbad;">${name}.herokuapp.com</span></a>
                                 <span class="badge">added ${appAddedTime} hours ago</span>
                                 <a href="#" class="tooltipped" data-tooltip="Delete" onclick="deleteHerokuApp('${name}')"><i class="material-icons" style="color:#ee6e73;">delete</i></a>
