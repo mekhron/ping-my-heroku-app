@@ -11,7 +11,7 @@
 
     <title>Ping My Heroku App</title>
 </head>
-<body>
+<body onload="fetchHerokuApps()">
     <div class="container">
         <!--navbar start-->
         <nav class="teal lighten-2">
@@ -40,13 +40,13 @@
                             <label for="url">.herokuapp.com</label>
                         </div>
                         <div class="input-field col" style="padding-top:10px;">
-                            <button class="btn waves-effect waves-light" type="submit" name="action" disabled>Keep my app alive
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Keep it alive
                                 <i class="material-icons right">send</i>
                             </button>
                         </div>
                 </div>
             </form>
-            <ul class="collapsible">
+            <ul class="collapsible" id="appsList">
                 <li>
                     <div class="collapsible-header">
                         <a href=""  class="tooltipped" data-tooltip="Stop pinging this app"><i class="material-icons" style="color:#2bbbad;">play_arrow</i></a>
@@ -98,11 +98,6 @@
         <!--end footer-->
     </div>
         
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.tooltipped');
-            var instances = M.Tooltip.init(elems, {});
-        });
-    </script>
+    <script src="../js/index.js"></script>
 </body>
 </html>
