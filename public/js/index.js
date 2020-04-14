@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.tooltipped');
-    var instances = M.Tooltip.init(elems, {});
+    let elems = document.querySelectorAll('.tooltipped');
+    let instances = M.Tooltip.init(elems, {});
 
     document.querySelector('#pingMyApp').addEventListener('submit', saveHerokuApp)
 
@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
             return false
         }
 
-        // let expression = /^a-zA-z-]/gi
-        // let regex = new RegExp(expression)
+        let expression = /[a-zA-Z]/gi
+        let regex = new RegExp(expression)
 
-        // if (!appName.match(regex)) {
-        //     alert('Please input valid name')
-        //     return false
-        // }
+        if (!appName.match(regex)) {
+            alert('Please input valid name')
+            return false
+        }
 
         if (localStorage.getItem('herokuApps') === null) {
             let herokuApps = []
@@ -40,49 +40,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         fetchHerokuApps()
-        
+        document.querySelector('#url').value = ''
     }
 });
 
 function fetchHerokuApps() {
     let herokuApps = JSON.parse(localStorage.getItem('herokuApps'))
-
+    let currentTime = Math.floor(Date.now() / 1000)
     let herokuAppsResults = document.querySelector('#appsList')
 
     herokuAppsResults.innerHTML = ''
     herokuApps.forEach(app => {
         let name = app.name, addedTime = app.time, status = app.status
-        let currentTime = Math.floor(Date.now() / 1000)
         let appAddedTime = Math.floor(((currentTime - addedTime) / 60) /60)
 
-        let statusParams = {
-            live: {
-                name: "live",
-                icon: "play_arrow",
-                tooltip: "Stop pinging this app",
-                color: "#2bbbad"
-            },
-            stop: {
-                name: "stop",
-                icon: "stop",
-                tooltip: "",
-                color: "#000000"
-            },
-            error: {
-                name: "error",
-                icon: "error",
-                tooltip: "Try again",
-                color: "#ee6e73"
-            }
-        }
-
-        let output = `<li>
-                            <div class="collapsible-header">
-                                <a href=""  class="tooltipped" data-tooltip="Stop pinging this app"><i class="material-icons" style="color:#2bbbad;">${currentTime - addedTime <= 3000 ? 'play_arrow' : 'stop'}</i></a>
+        let output = `<li class="row collection-item">
+                            <span class="col s1">
+                                <a href=""  class="tooltipped" data-tooltip="Stop pinging this app"><i class="material-icons" style="color:#2bbbad;">${currentTime - addedTime <= 120000 ? 'play_arrow' : 'stop'}</i></a>
+                            </span>
+                            <span class="col s6">
                                 <a href="https://${name}.herokuapp.com" target="_blank"><span style="color:#2bbbad;">${name}.herokuapp.com</span></a>
+                            </span>
+                            <span class="col s4">
                                 <span class="badge">added ${appAddedTime} hours ago</span>
+                            </span>
+                            <span class="col s1">
                                 <a href="#" class="tooltipped" data-tooltip="Delete" onclick="deleteHerokuApp('${name}')"><i class="material-icons" style="color:#ee6e73;">delete</i></a>
-                            </div>
+                            </span>
                         </li>`
 
         herokuAppsResults.innerHTML += output

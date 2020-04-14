@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/mekhron/ping-my-heroku-app/issues"
   },
-  "homepage": "https://pingmy.herokuapp.com"
+  "homepage": "https://pingmy.herokuapp.com",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  }
 }

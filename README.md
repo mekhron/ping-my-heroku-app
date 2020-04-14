@@ -1,4 +1,4 @@
-# Project Title
+# Ping My Heroku App
 
 Ping heroku app to keep it live
 
@@ -6,7 +6,7 @@ Ping heroku app to keep it live
 ![Application screensot](/public/images/pingMy.herokuapp.png)
 
 
-## Getting Started
+<!-- ## Getting Started
 
 Application where you can add link to your heroku app and it automatically will be pinged each 30 mins.
 
@@ -88,4 +88,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * Hat tip to anyone whose code was used
 * Inspiration
-* etc
+* etc -->
