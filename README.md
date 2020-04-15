@@ -1,6 +1,6 @@
 # Ping My Heroku App
 
-Ping heroku app to keep it live
+Ping heroku app to keep it alive
 
 
 ![Application screensot](/public/images/pingMy.herokuapp.png)
