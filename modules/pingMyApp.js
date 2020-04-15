@@ -7,7 +7,7 @@ const pingMyApp = (url, interval = 29, callback) => {
         try { 
             console.log(`setTimeout called.`)
             // HTTP GET request to the dyno's url
-            fetch(url).then(() => console.log(`Fetching ${url}.`));
+            fetch(url).then(() => console.log(`Fetching ${url}.`))
         }
         catch (err) { // catch fetch errors
             console.log(`Error fetching ${url}: ${err.message} 
