@@ -52,7 +52,7 @@ function fetchHerokuApps() {
     herokuAppsResults.innerHTML = ''
     herokuApps.forEach(app => {
         let name = app.name, addedTime = app.time, status = app.status
-        let appAddedTime = 24 * Math.floor(((currentTime - addedTime) / 60) /60)
+        let appAddedTime = Math.floor((currentTime - addedTime) / 86400)
 
         let output = `<li class="row collection-item">
                             <span class="col s1">
