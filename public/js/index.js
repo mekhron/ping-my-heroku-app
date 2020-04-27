@@ -52,7 +52,7 @@ function fetchHerokuApps() {
     herokuAppsResults.innerHTML = ''
     herokuApps.forEach(app => {
         let name = app.name, addedTime = app.time, status = app.status
-        let appAddedTime = Math.floor(((currentTime - addedTime) / 60) /60)
+        let appAddedTime = 24 * Math.floor(((currentTime - addedTime) / 60) /60)
 
         let output = `<li class="row collection-item">
                             <span class="col s1">
@@ -62,7 +62,7 @@ function fetchHerokuApps() {
                                 <a href="https://${name}.herokuapp.com" target="_blank"><span style="color:#2bbbad;">${name}.herokuapp.com</span></a>
                             </span>
                             <span class="col s4">
-                                <span class="badge">added ${appAddedTime} hours ago</span>
+                                <span class="badge">added ${appAddedTime} days ago</span>
                             </span>
                             <span class="col s1">
                                 <a href="#" class="tooltipped" data-tooltip="Delete" onclick="deleteHerokuApp('${name}')"><i class="material-icons" style="color:#ee6e73;">delete</i></a>
