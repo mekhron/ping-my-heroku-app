@@ -1,7 +1,7 @@
 const fetch = require("node-fetch")
 
 const pingMyApp = (url, interval = 29, callback) => {
-    const milliseconds = interval * 60000
+    const milliseconds = interval * 6000
     setTimeout(() => {
 
         try { 
